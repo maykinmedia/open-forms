@@ -1,0 +1,7 @@
+[ConnectSDK]
+connect.api.integrator=MaykinMedia
+connect.api.endpoint.host=eu.sandbox.api-ingenico.com
+connect.api.authorizationType=v1HMAC
+connect.api.connectTimeout=5
+connect.api.socketTimeout=300
+connect.api.maxConnections=10

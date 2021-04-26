@@ -21,6 +21,7 @@ module.exports = {
         [`${paths.package.name}-js`]: `${__dirname}/${paths.jsEntry}`,
         [`core-css`]:  `${__dirname}/${paths.sourcesRoot}forms/static/forms/scss/screen.scss`,
         [`core-js`]:  `${__dirname}/${paths.sourcesRoot}forms/static/forms/js/index.js`,
+        [`ingenico-proto-dev`]:  `${__dirname}/${paths.sourcesRoot}contrib/ingenico/static/ingenico/proto-dev.js`,
     },
 
     // (Output) bundle locations.
@@ -35,6 +36,10 @@ module.exports = {
     plugins: [
         new MiniCssExtractPlugin(),
     ],
+
+    // node: {
+    //     fs: 'empty'
+    //   },
 
     // Modules
     module: {

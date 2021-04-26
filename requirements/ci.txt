@@ -42,6 +42,10 @@ chardet==3.0.4
     #   requests
 click==7.1.2
     # via black
+connect-sdk-python3==3.20.0
+    # via
+    #   -c requirements/base.txt
+    #   -r requirements/base.txt
 coverage==4.5.4
     # via -r requirements/test-tools.in
 cryptography==3.1.1
@@ -186,12 +190,6 @@ idna==2.10
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   requests
-importlib-metadata==3.4.0
-    # via
-    #   -c requirements/base.txt
-    #   -r requirements/base.txt
-    #   flake8
-    #   jsonschema
 inflection==0.5.1
     # via
     #   -c requirements/base.txt
@@ -300,13 +298,20 @@ requests-mock==1.8.0
     #   -r requirements/base.txt
     #   -r requirements/test-tools.in
     #   zgw-consumers
+requests-toolbelt==0.9.1
+    # via
+    #   -c requirements/base.txt
+    #   -r requirements/base.txt
+    #   connect-sdk-python3
 requests==2.24.0
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
+    #   connect-sdk-python3
     #   django-rosetta
     #   gemma-zds-client
     #   requests-mock
+    #   requests-toolbelt
     #   zgw-consumers
 sentry-sdk==0.17.3
     # via
@@ -346,11 +351,7 @@ toml==0.10.2
 typed-ast==1.4.1
     # via black
 typing-extensions==3.7.4.3
-    # via
-    #   -c requirements/base.txt
-    #   -r requirements/base.txt
-    #   black
-    #   importlib-metadata
+    # via black
 uritemplate==3.0.1
     # via
     #   -c requirements/base.txt
@@ -382,11 +383,6 @@ zgw-consumers==0.15.2
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
-zipp==3.4.0
-    # via
-    #   -c requirements/base.txt
-    #   -r requirements/base.txt
-    #   importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools

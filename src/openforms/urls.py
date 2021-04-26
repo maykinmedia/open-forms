@@ -38,6 +38,14 @@ urlpatterns = [
     ),
     path("api/", include("openforms.api.urls", namespace="api")),
     path("", include("openforms.forms.urls", namespace="core")),
+    path(
+        "backends/",
+        include(
+            [
+                path("ingenico/", include("openforms.contrib.ingenico.urls")),
+            ]
+        ),
+    ),
     path("demo-spa/", SPADemoView.as_view(), name="spa-demo"),
     # NOTE: we dont use the User creation feature so don't enable all the mock views
     # path("digid/", include("digid_eherkenning.mock.digid_urls")),

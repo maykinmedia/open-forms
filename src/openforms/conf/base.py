@@ -110,6 +110,7 @@ INSTALLED_APPS = [
     "compat",  # Part of hijack
     "rest_framework",
     "rest_framework.authtoken",
+    "corsheaders",
     "drf_spectacular",
     "digid_eherkenning",
     "solo",
@@ -123,12 +124,14 @@ INSTALLED_APPS = [
     "openforms.utils",
     "openforms.submissions",
     "openforms.contrib.brp",
+    "openforms.contrib.ingenico",
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     # 'django.middleware.locale.LocaleMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",

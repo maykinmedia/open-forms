@@ -1,0 +1,21 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ingenico backend dev file</title>
+</head>
+<body>
+<h1>Ingenico</h1>
+    {% if payment_status %}
+    <p>Status: <strong>{{ payment_status }}</strong></p>
+    {% endif %}
+    <button type="button" id="button-checkout">Checkout</button>
+    <!-- <script src="{% static 'ingenico/vendor/forge.min.js' %}"></script> -->
+    <script src="{% static 'bundles/ingenico-proto-dev.js' %}"></script>
+    <!-- <script src="http://localhost:8080/static/bundles/ingenico-proto-dev.js"></script> -->
+</body>
+</html>
+

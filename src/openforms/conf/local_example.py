@@ -12,3 +12,11 @@ DATABASES = {
         "PORT": "",  # Set to empty string for default.
     }
 }
+
+INGENICO_BACKEND = {
+    "config_file": os.path.join(ROOT_DIR, "ingenico-sandbox.txt"),
+    "api_key_id": "",
+    "api_key_secret": "",
+    "webhook_key_id": "",
+    "webhook_key_secret": "",
+}

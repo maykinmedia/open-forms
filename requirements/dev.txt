@@ -60,6 +60,10 @@ click==7.1.2
     #   -r requirements/ci.txt
     #   black
     #   pip-tools
+connect-sdk-python3==3.20.0
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
 coverage==4.5.4
     # via
     #   -c requirements/ci.txt
@@ -233,13 +237,6 @@ idna==2.10
     #   requests
 imagesize==1.2.0
     # via sphinx
-importlib-metadata==3.4.0
-    # via
-    #   -c requirements/ci.txt
-    #   -r requirements/ci.txt
-    #   flake8
-    #   jsonschema
-    #   pep517
 inflection==0.5.1
     # via
     #   -c requirements/ci.txt
@@ -387,14 +384,21 @@ requests-mock==1.8.0
     #   -r requirements/ci.txt
     #   ddt-api-calls
     #   zgw-consumers
+requests-toolbelt==0.9.1
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   connect-sdk-python3
 requests==2.24.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
+    #   connect-sdk-python3
     #   ddt-api-calls
     #   django-rosetta
     #   gemma-zds-client
     #   requests-mock
+    #   requests-toolbelt
     #   sphinx
     #   zgw-consumers
 sentry-sdk==0.17.3
@@ -472,7 +476,6 @@ typing-extensions==3.7.4.3
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   black
-    #   importlib-metadata
 uritemplate==3.0.1
     # via
     #   -c requirements/ci.txt
@@ -513,12 +516,6 @@ zgw-consumers==0.15.2
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
-zipp==3.4.0
-    # via
-    #   -c requirements/ci.txt
-    #   -r requirements/ci.txt
-    #   importlib-metadata
-    #   pep517
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip
