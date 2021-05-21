@@ -16,15 +16,31 @@ const customModalStyles = {
 };
 
 
-const DeleteFormStepModal = ({formUUID, formStepUUID, isOpen, handleCloseFunction}) => {
+const DeleteFormStepModal = ({formUUID, formStepUUID, formStepNumber, isOpen, handleCloseFunction}) => {
+
+    const deleteFormStep = () => {
+        destroy(`/api/v1/forms/${formUUID}/steps/${formStepUUID}`).then(e => {
+            console.log(e);
+        });
+    };
 
     return (
         <Modal
             isOpen={isOpen}
             style={customModalStyles}
         >
-            <h1 className="title">Delete Form Step: {formStepUUID}</h1>
-            <button onClick={_ => handleCloseFunction()}>Close</button>
+            <h1 className="title">Delete Form Step {formStepNumber}</h1>
+            <button onClick={_ => {
+                deleteFormStep();
+                handleCloseFunction();
+            }}>
+                Delete
+            </button>
+            <button onClick={_ => {
+                handleCloseFunction();
+            }}>
+                Cancel
+            </button>
         </Modal>
     );
 };

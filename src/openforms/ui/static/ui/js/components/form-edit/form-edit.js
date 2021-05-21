@@ -13,6 +13,7 @@ const EditForm = ({formUUID}) => {
     const [formStepsToUpdate, setFormStepsToUpdate] = useState([]);
     const [isDeleteFormStepModalOpen, setIsDeleteFormStepModalOpen] = useState(false);
     const [deleteFormStepUuid, setDeleteFormStepUuid] = useState(null);
+    const [deleteFormStepNumber, setDeleteFormStepNumber] = useState(null);
 
     const handleDeleteFormStepModalClose = () => setIsDeleteFormStepModalOpen(false);
 
@@ -152,12 +153,6 @@ const EditForm = ({formUUID}) => {
                             style={{float: 'right', marginLeft: 8}}
                             className="button"
                             onClick={_ => {
-                                formStepsToDelete.forEach(formStepUuid => {
-                                    destroy(`/api/v1/forms/${formUUID}/steps/${formStepUuid}`).then(e => {
-                                        console.log(e);
-                                    });
-                                });
-
                                 for (const [stepUUID, formDefinition] of Object.entries(formStepsToUpdate)) {
                                     const data = {
                                         "formDefinition": formDefinition
