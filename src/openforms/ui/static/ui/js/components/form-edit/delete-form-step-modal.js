@@ -18,6 +18,8 @@ const customModalStyles = {
 
 const DeleteFormStepModal = ({formUUID, formStepUUID, formStepNumber, isOpen, handleCloseFunction}) => {
 
+    // TODO Need to update the states in form-edit so the deleted step is no longer shown on the frontend
+
     const deleteFormStep = () => {
         destroy(`/api/v1/forms/${formUUID}/steps/${formStepUUID}`).then(e => {
             console.log(e);
@@ -31,6 +33,9 @@ const DeleteFormStepModal = ({formUUID, formStepUUID, formStepNumber, isOpen, ha
         >
             <h1 className="title">Delete Form Step {formStepNumber}</h1>
             <button onClick={_ => {
+                // TODO Only do this if the step was saved on the backend
+                //   Maybe make formStepUUID optional and only do function call if formStepUUID exists
+                //   since a form step only created in the front end will not have a uuid
                 deleteFormStep();
                 handleCloseFunction();
             }}>

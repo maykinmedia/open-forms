@@ -96,6 +96,7 @@ const EditForm = ({formUUID}) => {
                         className="related-widget-wrapper-link delete-related"
                         style={{opacity: 0.8}}
                         onClick={_ => {
+                            // TODO Use delete-form-step-modal here
                             setStepFormValues(previousState => {
                                 delete previousState[stepForms.length + 1];
                                 return previousState;
