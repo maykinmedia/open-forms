@@ -2,6 +2,7 @@ import React, {useState, useEffect, Fragment} from "react";
 import PropTypes from 'prop-types';
 import useAsync from 'react-use/esm/useAsync';
 import {get, post, put, destroy} from './api';
+import DeleteFormStepModal from './delete-form-step-modal';
 
 
 const EditForm = ({formUUID}) => {
@@ -10,6 +11,10 @@ const EditForm = ({formUUID}) => {
     const [stepFormValues, setStepFormValues] = useState({});
     const [formStepsToDelete, setFormStepsToDelete] = useState([]);
     const [formStepsToUpdate, setFormStepsToUpdate] = useState([]);
+    const [isDeleteFormStepModalOpen, setIsDeleteFormStepModalOpen] = useState(false);
+    const [deleteFormStepUuid, setDeleteFormStepUuid] = useState(null);
+
+    const handleDeleteFormStepModalClose = () => setIsDeleteFormStepModalOpen(false);
 
     const {loading: formLoading, value: formValue, error: formError} = useAsync(
         async () => await get(`/api/v1/forms/${formUUID}`)
@@ -47,16 +52,18 @@ const EditForm = ({formUUID}) => {
                                 className="related-widget-wrapper-link delete-related"
                                 style={{opacity: 0.8}}
                                 onClick={_ => {
-                                    setStepFormValues(previousState => {
-                                        delete previousState[index + 1];
-                                        return previousState;
-                                    });
-                                    setFormStepsToUpdate(previousState => {
-                                        delete previousState[formStepsValue.uuid];
-                                        return previousState;
-                                    });
-                                    setStepForms(previousState => previousState.filter(element => element.key !== index.toString()));
-                                    setFormStepsToDelete([...formStepsToDelete, formStepsValue.uuid]);
+                                    setDeleteFormStepUuid(formStepsValue.uuid);
+                                    setIsDeleteFormStepModalOpen(true);
+                                    // setStepFormValues(previousState => {
+                                    //     delete previousState[index + 1];
+                                    //     return previousState;
+                                    // });
+                                    // setFormStepsToUpdate(previousState => {
+                                    //     delete previousState[formStepsValue.uuid];
+                                    //     return previousState;
+                                    // });
+                                    // setStepForms(previousState => previousState.filter(element => element.key !== index.toString()));
+                                    // setFormStepsToDelete([...formStepsToDelete, formStepsValue.uuid]);
                             }}>
                                 <img src="/static/admin/img/icon-deletelink.svg" alt="Verwijderen"/>
                             </a>
@@ -175,6 +182,12 @@ const EditForm = ({formUUID}) => {
                     </div>
                 </div>
             </div>
+            <DeleteFormStepModal
+                formUUID={formUUID}
+                formStepUUID={deleteFormStepUuid}
+                isOpen={isDeleteFormStepModalOpen}
+                handleCloseFunction={handleDeleteFormStepModalClose}
+            />
         </div>
     );
 };
