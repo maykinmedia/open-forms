@@ -1,7 +1,7 @@
 import logging
 from base64 import b64encode
 from datetime import date
-from typing import Optional
+from typing import Optional, Union
 
 from django.utils import timezone
 
@@ -37,9 +37,11 @@ def create_zaak(options: dict) -> dict:
 
 def create_document(
     name: str,
-    submission_report: SubmissionReport,
+    submission_file: Union[SubmissionReport, SubmissionFileAttachment],
     options: dict,
-    config: SingletonModel = None,
+    filename: Optional[str] = None,
+    description: Optional[str] = None,
+    config: Optional[SingletonModel] = None,
 ) -> dict:
     if not config:
         config = ZgwConfig.get_solo()
@@ -47,9 +49,10 @@ def create_document(
     client = config.drc_service.build_client()
     today = date.today().isoformat()
 
-    submission_report.content.seek(0)
-    base64_body = b64encode(submission_report.content.read()).decode()
+    submission_file.content.seek(0)
+    base64_body = b64encode(submission_file.content.read()).decode()
 
+    # TODO change bestandsnaam en beschrijving
     data = {
         "informatieobjecttype": options["informatieobjecttype"],
         "bronorganisatie": options["organisatie_rsin"],
@@ -60,8 +63,8 @@ def create_document(
         "formaat": "application/pdf",
         "inhoud": base64_body,
         "status": "definitief",
-        "bestandsnaam": f"open-forms-{name}.pdf",
-        "beschrijving": "Ingezonden formulier",
+        "bestandsnaam": filename or f"open-forms-{name}.pdf",
+        "beschrijving": description or "Ingezonden formulier",
     }
     if "vertrouwelijkheidaanduiding" in options:
         data["vertrouwelijkheidaanduiding"] = options["vertrouwelijkheidaanduiding"]

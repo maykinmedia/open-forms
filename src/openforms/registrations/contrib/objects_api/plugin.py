@@ -37,6 +37,22 @@ class ObjectsAPIRegistration(BasePlugin):
             config=config,
         )
 
+        attachment_options = deepcopy(options)
+        attachment_options["informatieobjecttype"] = options[
+            "informatieobjecttype_attachment"
+        ]
+        attachments = []
+        for attachment in submission.attachments:
+            attachment_document = create_document(
+                f"{submission.form.name} bijlage",
+                attachment,
+                attachment_options,
+                filename=attachment.file_name,
+                description="Formulier bijlage",
+                config=config,
+            )
+            attachments.append(attachment_document["url"])
+
         objects_client = config.objects_service.build_client()
 
         created_object = objects_client.create(
@@ -49,6 +65,7 @@ class ObjectsAPIRegistration(BasePlugin):
                         "data": submission.get_merged_data(),
                         "type": options["productaanvraag_type"],
                         "submission_id": str(submission.uuid),
+                        "attachments": attachments,
                         "pdf_url": document["url"],
                     },
                     "startAt": date.today().isoformat(),
