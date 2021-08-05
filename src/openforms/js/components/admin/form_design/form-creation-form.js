@@ -21,6 +21,7 @@ import FormMetaFields from './FormMetaFields';
 import FormObjectTools from './FormObjectTools';
 import RegistrationFields from './RegistrationFields';
 import TextLiterals from './TextLiterals';
+import FormLogic from './FormLogic';
 
 const initialFormState = {
     form: {
@@ -700,7 +701,7 @@ const FormCreationForm = ({csrftoken, formUuid, formHistoryUrl }) => {
                 : null
             }
 
-            <Tabs>
+            <Tabs defaultIndex={2}>
                 <TabList>
                     <Tab>
                         <FormattedMessage defaultMessage="Form" description="Form fields tab title" />
@@ -798,7 +799,7 @@ const FormCreationForm = ({csrftoken, formUuid, formHistoryUrl }) => {
 
                 <TabPanel>
                     <Fieldset title="Logica">
-                        LOGIC
+                        <FormLogic formSteps={state.formSteps.data} />
                     </Fieldset>
                 </TabPanel>
 
