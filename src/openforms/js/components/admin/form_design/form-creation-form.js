@@ -795,6 +795,13 @@ const FormCreationForm = ({csrftoken, formUuid, formHistoryUrl }) => {
                 <TabPanel>
                     <TextLiterals literals={state.literals} onChange={onFieldChange} />
                 </TabPanel>
+
+                <TabPanel>
+                    <Fieldset title="Logica">
+                        LOGIC
+                    </Fieldset>
+                </TabPanel>
+
             </Tabs>
 
             <SubmitRow onSubmit={onSubmit} isDefault />
