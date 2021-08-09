@@ -718,6 +718,9 @@ const FormCreationForm = ({csrftoken, formUuid, formHistoryUrl }) => {
                     <Tab>
                         <FormattedMessage defaultMessage="Literals" description="Form literals tab title" />
                     </Tab>
+                    <Tab>
+                        <FormattedMessage defaultMessage="Logics" description="Form logic tab title" />
+                    </Tab>
                 </TabList>
 
                 <TabPanel>
@@ -799,7 +802,7 @@ const FormCreationForm = ({csrftoken, formUuid, formHistoryUrl }) => {
 
                 <TabPanel>
                     <Fieldset title="Logica">
-                        <FormLogic formSteps={state.formSteps.data} />
+                        <FormLogic formUuid={state.form.uuid} formSteps={state.formSteps.data} csrftoken={csrftoken}/>
                     </Fieldset>
                 </TabPanel>
 
