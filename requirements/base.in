@@ -36,6 +36,7 @@ mozilla-django-oidc-db
 -e git+https://github.com/maykinmedia/python3-saml.git@58fd3ad798510c7ced110040d2fd0e6ad40d02da#egg=python3_saml
 pyopenssl
 git+https://github.com/nadirizr/json-logic-py.git@5fda9125eab4178f8f81c7779291940e31e87bab#egg=json_logic
+django-filter
 
 # API libraries
 djangorestframework~=3.12.0

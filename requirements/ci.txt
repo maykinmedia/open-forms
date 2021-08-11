@@ -163,6 +163,10 @@ django-decorator-include==3.0
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
+django-filter==2.4.0
+    # via
+    #   -c requirements/base.txt
+    #   -r requirements/base.txt
 django-hijack-admin==2.1.10
     # via
     #   -c requirements/base.txt
@@ -230,6 +234,7 @@ django==2.2.24
     #   django-cookie-consent
     #   django-cors-headers
     #   django-decorator-include
+    #   django-filter
     #   django-jenkins
     #   django-privates
     #   django-redis
