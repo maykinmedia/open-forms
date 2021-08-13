@@ -11,7 +11,7 @@ from ...authentication.registry import register as auth_register
 from ..custom_field_types import handle_custom_types
 from ..models import Form, FormDefinition, FormStep, FormVersion
 from ..models.form import FormLogic
-from .validators import LogicActionValidator
+from .validators import JsonLogicValidator, LogicActionValidator
 
 
 class ButtonTextSerializer(serializers.Serializer):
@@ -306,4 +306,5 @@ class FormLogicSerializer(serializers.HyperlinkedModelSerializer):
                 "read_only": True,
             },
             "actions": {"validators": [LogicActionValidator()]},
+            "json_logic_trigger": {"validators": [JsonLogicValidator()]},
         }
