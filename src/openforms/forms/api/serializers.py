@@ -11,6 +11,7 @@ from ...authentication.registry import register as auth_register
 from ..custom_field_types import handle_custom_types
 from ..models import Form, FormDefinition, FormStep, FormVersion
 from ..models.form import FormLogic
+from .validators import LogicActionValidator
 
 
 class ButtonTextSerializer(serializers.Serializer):
@@ -303,12 +304,6 @@ class FormLogicSerializer(serializers.HyperlinkedModelSerializer):
         extra_kwargs = {
             "uuid": {
                 "read_only": True,
-            }
+            },
+            "actions": {"validators": [LogicActionValidator()]},
         }
-
-    def validate_actions(self, value):
-        if not isinstance(value, list):
-            raise serializers.ValidationError(
-                _("Attribute 'actions' of form logic should be a list.")
-            )
-        return value
