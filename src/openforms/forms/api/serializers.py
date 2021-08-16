@@ -10,9 +10,9 @@ from ...authentication.api.fields import LoginOptionsReadOnlyField
 from ...authentication.registry import register as auth_register
 from ...payments.api.fields import PaymentOptionsReadOnlyField
 from ...payments.registry import register as payment_register
+from ...config.constants import RemovalMethods
 from ..custom_field_types import handle_custom_types
 from ..models import Form, FormDefinition, FormStep, FormVersion
-from ...config.constants import RemovalMethods
 
 
 class ButtonTextSerializer(serializers.Serializer):
