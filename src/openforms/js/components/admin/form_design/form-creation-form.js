@@ -22,6 +22,7 @@ import FormMetaFields from './FormMetaFields';
 import FormObjectTools from './FormObjectTools';
 import RegistrationFields from './RegistrationFields';
 import TextLiterals from './TextLiterals';
+import DataRemoval from "./DataRemoval";
 
 const initialFormState = {
     form: {
@@ -36,6 +37,14 @@ const initialFormState = {
         canSubmit: true,
         registrationBackend: '',
         registrationBackendOptions: {},
+        successfulSubmissionsRemovalLimit: '',
+        successfulSubmissionsRemovalMethod: '',
+        incompleteSubmissionsRemovalLimit: '',
+        incompleteSubmissionsRemovalMethod: '',
+        erroredSubmissionsRemovalLimit: '',
+        erroredSubmissionsRemovalMethod: '',
+        allSubmissionsRemovalLimit: '',
+        removalMethods: [],
     },
     literals: {
         beginText: {
@@ -746,6 +755,9 @@ const FormCreationForm = ({csrftoken, formUuid, formHistoryUrl }) => {
                     <Tab>
                         <FormattedMessage defaultMessage="Literals" description="Form literals tab title" />
                     </Tab>
+                    <Tab>
+                        <FormattedMessage defaultMessage="Data Removal" description="Data removal tab title" />
+                    </Tab>
                 </TabList>
 
                 <TabPanel>
@@ -824,6 +836,20 @@ const FormCreationForm = ({csrftoken, formUuid, formHistoryUrl }) => {
 
                 <TabPanel>
                     <TextLiterals literals={state.literals} onChange={onFieldChange} />
+                </TabPanel>
+
+                <TabPanel>
+                    <DataRemoval
+                        successfulSubmissionsRemovalLimit={state.form.successfulSubmissionsRemovalLimit}
+                        successfulSubmissionsRemovalMethod={state.form.successfulSubmissionsRemovalMethod}
+                        incompleteSubmissionsRemovalLimit={state.form.incompleteSubmissionsRemovalLimit}
+                        incompleteSubmissionsRemovalMethod={state.form.incompleteSubmissionsRemovalMethod}
+                        erroredSubmissionsRemovalLimit={state.form.erroredSubmissionsRemovalLimit}
+                        erroredSubmissionsRemovalMethod={state.form.erroredSubmissionsRemovalMethod}
+                        allSubmissionsRemovalLimit={state.form.allSubmissionsRemovalLimit}
+                        removalMethods={state.form.removalMethods}
+                        onChange={onFieldChange}
+                    />
                 </TabPanel>
             </Tabs>
 
