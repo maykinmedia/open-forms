@@ -1,4 +1,9 @@
 {
+  "+F0/GO": {
+    "defaultMessage": "All Submissions Removal Limit",
+    "description": "form.allSubmissionsRemovalLimit form label",
+    "originalDefault": "All Submissions Removal Limit"
+  },
   "+hAGg7": {
     "defaultMessage": "Users will not be able to start the form if it is in maintenance mode.",
     "description": "Form maintenance mode field help text",
@@ -8,6 +13,11 @@
     "defaultMessage": "Literals",
     "description": "Form literals tab title",
     "originalDefault": "Literals"
+  },
+  "0YYYoJ": {
+    "defaultMessage": "How errored submissions of this form will be removed after the limit of days. Leave blank to use value in General Configuration.",
+    "description": "form.erroredSubmissionsRemovalMethod help text",
+    "originalDefault": "How errored submissions of this form will be removed after the limit of days. Leave blank to use value in General Configuration."
   },
   "0ZtMje": {
     "defaultMessage": "Are you sure you want to delete the step {step}?",
@@ -129,6 +139,11 @@
     "description": "Auth plugin field help text",
     "originalDefault": "Select the allowed authentication plugins to log in at the start of the form."
   },
+  "Cm2Mjl": {
+    "defaultMessage": "Data Removal",
+    "description": "Data removal tab title",
+    "originalDefault": "Data Removal"
+  },
   "DGpAyT": {
     "defaultMessage": "Move down",
     "description": "Move down icon title",
@@ -219,6 +234,11 @@
     "description": "Form step save text label",
     "originalDefault": "Save text"
   },
+  "RZKO9J": {
+    "defaultMessage": "Successful Submissions Removal Method",
+    "description": "Successful Submissions Removal Method",
+    "originalDefault": "Successful Submissions Removal Method"
+  },
   "TCQic2": {
     "defaultMessage": "Confirm text",
     "description": "literals.confirmText form label",
@@ -234,10 +254,25 @@
     "description": "Form slug field label",
     "originalDefault": "Slug"
   },
+  "UEfO0b": {
+    "defaultMessage": "Amount of days successful submissions of this form will remain before being removed. Leave blank to use value in General Configuration.",
+    "description": "form.successfulSubmissionsRemovalLimit help text",
+    "originalDefault": "Amount of days successful submissions of this form will remain before being removed. Leave blank to use value in General Configuration."
+  },
   "VQYmOD": {
     "defaultMessage": "Component \"{label}\" uses a prefill that requires the \"{requiredAuthAttribute}\" attribute. Please select an authentication plugin that provides this attribute.",
     "description": "Prefill plugin requires unavailable auth attribute warning",
     "originalDefault": "Component \"{label}\" uses a prefill that requires the \"{requiredAuthAttribute}\" attribute. Please select an authentication plugin that provides this attribute."
+  },
+  "VecuC/": {
+    "defaultMessage": "Incomplete Submissions Removal Method",
+    "description": "Incomplete Submissions Removal Method",
+    "originalDefault": "Incomplete Submissions Removal Method"
+  },
+  "WZQSEd": {
+    "defaultMessage": "How successful submissions of this form will be removed after the limit. Leave blank to use value in General Configuration.",
+    "description": "form.successfulSubmissionsRemovalMethod help text",
+    "originalDefault": "How successful submissions of this form will be removed after the limit. Leave blank to use value in General Configuration."
   },
   "Y5A1Tn": {
     "defaultMessage": "Delete",
@@ -264,6 +299,11 @@
     "description": "Form step login required label",
     "originalDefault": "Login required?"
   },
+  "bjR8f3": {
+    "defaultMessage": "Amount of days when all submissions of this form will be permanently deleted. Leave blank to use value in General Configuration.",
+    "description": "form.allSubmissionsRemovalLimit help text",
+    "originalDefault": "Amount of days when all submissions of this form will be permanently deleted. Leave blank to use value in General Configuration."
+  },
   "bzVhb6": {
     "defaultMessage": "Move up",
     "description": "Move up icon title",
@@ -278,6 +318,11 @@
     "defaultMessage": "Show progress indicator",
     "description": "Progress indicator field label",
     "originalDefault": "Show progress indicator"
+  },
+  "f/PTWI": {
+    "defaultMessage": "Incomplete Submissions Removal Limit",
+    "description": "form.incompleteSubmissionsRemovalLimit form label",
+    "originalDefault": "Incomplete Submissions Removal Limit"
   },
   "f590Rb": {
     "defaultMessage": "Begin text",
@@ -309,15 +354,40 @@
     "description": "Form definition module title",
     "originalDefault": "Form definition"
   },
+  "jKaYW+": {
+    "defaultMessage": "Successful Submissions Removal Limit",
+    "description": "form.successfulSubmissionsRemovalLimit form label",
+    "originalDefault": "Successful Submissions Removal Limit"
+  },
+  "lVfTS1": {
+    "defaultMessage": "Amount of days incomplete submissions of this form will remain before being removed. Leave blank to use value in General Configuration.",
+    "description": "form.incompleteSubmissionsRemovalLimit help text",
+    "originalDefault": "Amount of days incomplete submissions of this form will remain before being removed. Leave blank to use value in General Configuration."
+  },
   "mOjKcm": {
     "defaultMessage": "Steps and fields",
     "description": "Form design tab title",
     "originalDefault": "Steps and fields"
   },
+  "mmEC0I": {
+    "defaultMessage": "How incomplete submissions of this form will be removed after the limit. Leave blank to use value in General Configuration.",
+    "description": "form.incompleteSubmissionsRemovalMethod help text",
+    "originalDefault": "How incomplete submissions of this form will be removed after the limit. Leave blank to use value in General Configuration."
+  },
+  "n5ko6r": {
+    "defaultMessage": "Amount of days errored submissions of this form will remain before being removed. Leave blank to use value in General Configuration.",
+    "description": "form.erroredSubmissionsRemovalLimit help text",
+    "originalDefault": "Amount of days errored submissions of this form will remain before being removed. Leave blank to use value in General Configuration."
+  },
   "ow5AAO": {
     "defaultMessage": "The form is invalid. Please correct the errors below.",
     "description": "Generic error message",
     "originalDefault": "The form is invalid. Please correct the errors below."
+  },
+  "pHEjbm": {
+    "defaultMessage": "Errored Submissions Removal Method",
+    "description": "Errored Submissions Removal Method",
+    "originalDefault": "Errored Submissions Removal Method"
   },
   "pd8iHF": {
     "defaultMessage": "Submit button enabled",
@@ -383,5 +453,10 @@
     "defaultMessage": "Select definition",
     "description": "select definition icon title",
     "originalDefault": "Select definition"
+  },
+  "zsbc3W": {
+    "defaultMessage": "Errored Submissions Removal Limit",
+    "description": "form.erroredSubmissionsRemovalLimit form label",
+    "originalDefault": "Errored Submissions Removal Limit"
   }
 }

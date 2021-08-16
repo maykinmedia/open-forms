@@ -1,4 +1,10 @@
 {
+  "+F0/GO": [
+    {
+      "type": 0,
+      "value": "All Submissions Removal Limit"
+    }
+  ],
   "+hAGg7": [
     {
       "type": 0,
@@ -9,6 +15,12 @@
     {
       "type": 0,
       "value": "Knopteksten"
+    }
+  ],
+  "0YYYoJ": [
+    {
+      "type": 0,
+      "value": "How errored submissions of this form will be removed after the limit of days. Leave blank to use value in General Configuration."
     }
   ],
   "0ZtMje": [
@@ -203,6 +215,12 @@
       "value": "Select the allowed authentication plugins to log in at the start of the form."
     }
   ],
+  "Cm2Mjl": [
+    {
+      "type": 0,
+      "value": "Data Removal"
+    }
+  ],
   "DGpAyT": [
     {
       "type": 0,
@@ -319,6 +337,12 @@
       "value": "'Opslaan' tekst"
     }
   ],
+  "RZKO9J": [
+    {
+      "type": 0,
+      "value": "Successful Submissions Removal Method"
+    }
+  ],
   "TCQic2": [
     {
       "type": 0,
@@ -335,6 +359,12 @@
     {
       "type": 0,
       "value": "URL-deel"
+    }
+  ],
+  "UEfO0b": [
+    {
+      "type": 0,
+      "value": "Amount of days successful submissions of this form will remain before being removed. Leave blank to use value in General Configuration."
     }
   ],
   "VQYmOD": [
@@ -357,6 +387,18 @@
     {
       "type": 0,
       "value": "\"-attribuut nodig heeft. Gebruik een inlogoptie die dit attribuut aanbiedt."
+    }
+  ],
+  "VecuC/": [
+    {
+      "type": 0,
+      "value": "Incomplete Submissions Removal Method"
+    }
+  ],
+  "WZQSEd": [
+    {
+      "type": 0,
+      "value": "How successful submissions of this form will be removed after the limit. Leave blank to use value in General Configuration."
     }
   ],
   "Y5A1Tn": [
@@ -389,6 +431,12 @@
       "value": "Inloggen vereist?"
     }
   ],
+  "bjR8f3": [
+    {
+      "type": 0,
+      "value": "Amount of days when all submissions of this form will be permanently deleted. Leave blank to use value in General Configuration."
+    }
+  ],
   "bzVhb6": [
     {
       "type": 0,
@@ -405,6 +453,12 @@
     {
       "type": 0,
       "value": "Toon voortang"
+    }
+  ],
+  "f/PTWI": [
+    {
+      "type": 0,
+      "value": "Incomplete Submissions Removal Limit"
     }
   ],
   "f590Rb": [
@@ -447,16 +501,46 @@
       "value": "(Herbruikbare) stapgegevens"
     }
   ],
+  "jKaYW+": [
+    {
+      "type": 0,
+      "value": "Successful Submissions Removal Limit"
+    }
+  ],
+  "lVfTS1": [
+    {
+      "type": 0,
+      "value": "Amount of days incomplete submissions of this form will remain before being removed. Leave blank to use value in General Configuration."
+    }
+  ],
   "mOjKcm": [
     {
       "type": 0,
       "value": "Stappen en velden"
     }
   ],
+  "mmEC0I": [
+    {
+      "type": 0,
+      "value": "How incomplete submissions of this form will be removed after the limit. Leave blank to use value in General Configuration."
+    }
+  ],
+  "n5ko6r": [
+    {
+      "type": 0,
+      "value": "Amount of days errored submissions of this form will remain before being removed. Leave blank to use value in General Configuration."
+    }
+  ],
   "ow5AAO": [
     {
       "type": 0,
       "value": "De gegevens zijn ongeldig. Los de problemen hieronder op."
+    }
+  ],
+  "pHEjbm": [
+    {
+      "type": 0,
+      "value": "Errored Submissions Removal Method"
     }
   ],
   "pd8iHF": [
@@ -535,6 +619,12 @@
     {
       "type": 0,
       "value": "Formulierdefinitie selecteren"
+    }
+  ],
+  "zsbc3W": [
+    {
+      "type": 0,
+      "value": "Errored Submissions Removal Limit"
     }
   ]
 }
