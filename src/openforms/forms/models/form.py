@@ -291,13 +291,6 @@ class Form(models.Model):
                 return True
         return False
 
-    @cached_property
-    def sensitive_fields(self):
-        sensitive_fields = []
-        for form_step in self.formstep_set.select_related("form_definition"):
-            sensitive_fields += form_step.form_definition.sensitive_fields
-        return sensitive_fields
-
     # TODO Refactor to avoid code duplication in src/openforms/forms/utils.py
     @transaction.atomic
     def restore_old_version(self, form_version_uuid: str) -> None:

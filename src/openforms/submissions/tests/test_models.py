@@ -1,6 +1,10 @@
 from django.test import TestCase
 
-from openforms.forms.tests.factories import FormDefinitionFactory, FormStepFactory
+from openforms.forms.tests.factories import (
+    FormDefinitionFactory,
+    FormFactory,
+    FormStepFactory,
+)
 
 from .factories import SubmissionFactory, SubmissionStepFactory
 
@@ -73,4 +77,83 @@ class TestSubmission(TestCase):
                 "key3": {"type": "checkbox", "value": True},
                 "key5": {"type": "textfield", "value": "this is some inner text"},
             },
+        )
+
+    def test_submission_has_sensitive_information(self):
+        form_definition = FormDefinitionFactory.create(
+            configuration={
+                "components": [
+                    {"key": "textFieldSensitive", "isSensitiveData": True},
+                    {"key": "textFieldNotSensitive", "isSensitiveData": False},
+                ],
+            }
+        )
+        form = FormFactory.create()
+        form_step = FormStepFactory.create(form=form, form_definition=form_definition)
+
+        submission = SubmissionFactory.create(form=form)
+        SubmissionStepFactory.create(
+            submission=submission,
+            data={
+                "textFieldSensitive": "this is sensitive",
+                "textFieldNotSensitive": "this is not sensitive",
+            },
+            form_step=form_step,
+        )
+
+        self.assertTrue(submission.has_sensitive_information)
+
+    def test_submission_remove_sensitive_data(self):
+        form_definition = FormDefinitionFactory.create(
+            configuration={
+                "components": [
+                    {"key": "textFieldSensitive", "isSensitiveData": True},
+                    {"key": "textFieldNotSensitive", "isSensitiveData": False},
+                ],
+            }
+        )
+        form_definition_2 = FormDefinitionFactory.create(
+            configuration={
+                "components": [
+                    {"key": "textFieldSensitive2", "isSensitiveData": True},
+                    {"key": "textFieldNotSensitive2", "isSensitiveData": False},
+                ],
+            }
+        )
+        form = FormFactory.create()
+        form_step = FormStepFactory.create(form=form, form_definition=form_definition)
+        form_step_2 = FormStepFactory.create(
+            form=form, form_definition=form_definition_2
+        )
+
+        submission = SubmissionFactory.create(form=form)
+        submission_step = SubmissionStepFactory.create(
+            submission=submission,
+            data={
+                "textFieldSensitive": "this is sensitive",
+                "textFieldNotSensitive": "this is not sensitive",
+            },
+            form_step=form_step,
+        )
+        submission_step_2 = SubmissionStepFactory.create(
+            submission=submission,
+            data={
+                "textFieldSensitive2": "this is sensitive",
+                "textFieldNotSensitive2": "this is not sensitive",
+            },
+            form_step=form_step_2,
+        )
+
+        submission.remove_sensitive_data()
+
+        submission_step.refresh_from_db()
+        submission_step_2.refresh_from_db()
+
+        self.assertEqual(submission_step.data["textFieldSensitive"], "")
+        self.assertEqual(
+            submission_step.data["textFieldNotSensitive"], "this is not sensitive"
+        )
+        self.assertEqual(submission_step_2.data["textFieldSensitive2"], "")
+        self.assertEqual(
+            submission_step_2.data["textFieldNotSensitive2"], "this is not sensitive"
         )
