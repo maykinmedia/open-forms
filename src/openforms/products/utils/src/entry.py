@@ -1,7 +1,6 @@
 import json
-from factory import FieldFactory
 
-# from pprint import pprint
+from factory import FieldFactory
 
 FIELD_TYPE = {"type": FieldFactory}
 
@@ -26,10 +25,3 @@ def convert_json_schema_to_py(json_schema: dict) -> dict:
         elem = json.dumps(single_field.dict_repr)
         final_result["components"].append(json.loads(elem))
     return final_result
-
-
-
-
-
-if __name__ == "__main__":
-    pass

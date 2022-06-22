@@ -2,13 +2,13 @@ from formio_classes import (
     DateTimeField,
     DayField,
     EmailField,
-    TimeField,
     NumberField,
-    SelectBoxesField,    
-    TextField,
-    TextAreaField,
     RadioField,
-    SelectField
+    SelectBoxesField,
+    SelectField,
+    TextAreaField,
+    TextField,
+    TimeField,
 )
 
 
@@ -45,7 +45,7 @@ class FieldFactory:
         "number": NumberField,
         "integer": NumberField,
         "array": SelectBoxesField,
-        "boolean": RadioField,# SelectField ?
+        "boolean": RadioField,  # SelectField ?
         # the rest of JSON schema "types":
         # 'null': NullType
         # "duration": DurationType,

@@ -1,9 +1,7 @@
 import pytest
+from tests.data.int_vs_number import integer_schema, number_schema
+
 from src.entry import convert_json_schema_to_py
-from tests.data.int_vs_number import (
-    integer_schema,
-    number_schema,
-)
 
 
 @pytest.mark.parametrize(
@@ -22,4 +20,3 @@ def test_compair(schema, expected_output):
         convert_json_schema_to_py(schema)["components"][0]["validate"].get("integer")
         == expected_output
     )
-    

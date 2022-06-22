@@ -169,7 +169,3 @@ class SelectField(SingleField):
 
 #     def __str__(self) -> str:
 #         return "I am an instance of a Password"
-
-
-if __name__ == "__main__":
-    pass
