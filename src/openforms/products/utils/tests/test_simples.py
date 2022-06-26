@@ -1,5 +1,5 @@
 import pytest
-from tests.data.singles import (
+from tests.data.example_simples import (
     date_time_schema,
     day_schema,
     email_schema,
@@ -25,4 +25,5 @@ from src.entry import convert_json_schema_to_py
     ],
 )
 def test_simple(schema, expected_output):
+    pass
     assert convert_json_schema_to_py(schema)["components"][0]["type"] == expected_output

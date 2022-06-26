@@ -1,11 +1,11 @@
-from formio_classes import (
+from .formio_classes import (
     DateTimeField,
     DayField,
     EmailField,
+    FieldSetBuilder,
     NumberField,
     RadioField,
     SelectBoxesField,
-    SelectField,
     TextAreaField,
     TextField,
     TimeField,
@@ -45,13 +45,13 @@ class FieldFactory:
         "number": NumberField,
         "integer": NumberField,
         "array": SelectBoxesField,
-        "boolean": RadioField,  # SelectField ?
+        "boolean": RadioField,
+        "object": FieldSetBuilder
         # the rest of JSON schema "types":
         # 'null': NullType
         # "duration": DurationType,
         # "hostname": HostnameType,
         # "ipaddress": IpAddressType
-        # 'object': DictType,
     }
 
     @classmethod
@@ -60,6 +60,26 @@ class FieldFactory:
         _class = cls.CLASS_TYPES.get(_type, None)
         if _type == "string":
             obj = StringTypeFactory.create(content=content)
+        elif _type == "object":
+            obj = FieldSetBuilder.create(content=content)
         else:
             obj = _class(**{"content": content})
         return obj
+
+
+# @classmethod
+#     def create(cls, content):
+#         try:
+#             _type = content.get("type")
+#             _class = cls.CLASS_TYPES.get(_type, None)
+#             if _type == "string":
+#                 obj = StringTypeFactory.create(content=content)
+#             elif _type == "object":
+#                 obj = FieldSetBuilder.create(content=content)
+#             else:
+#                 obj = _class(**{"content": content})
+#             raise AssertionError("Can't find type")
+#         except AssertionError as e:
+#             print(e)
+
+#         return obj

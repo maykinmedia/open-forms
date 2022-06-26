@@ -1,0 +1,48 @@
+{
+    "components": [
+      {
+        "legend": "USER",
+        "key": "fieldset",
+        "label": "Field Set",
+        "type": "fieldset",
+        "input": false,
+        "components": [
+          {
+            "legend": "NAME",
+            "key": "fieldset",
+            "label": "Field Set",
+            "type": "fieldset",
+            "input": false,
+            "components": [
+              {
+                "key": "last_name",
+                "label": null,
+                "description": null,
+                "validate": {
+                  "required": true,
+                  "pattern": null,
+                  "maxLength": null,
+                  "minLength": null
+                },
+                "defaultValue": null,
+                "input": true,
+                "type": "textfield"
+              }
+            ]
+          },
+          {
+            "key": "email",
+            "label": null,
+            "description": null,
+            "validate": {
+              "required": true,
+              "pattern": null
+            },
+            "defaultValue": null,
+            "input": true,
+            "type": "email"
+          }
+        ]
+      }
+    ]
+  }
