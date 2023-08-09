@@ -1214,3 +1214,5 @@ setuptools==65.6.3
     #   josepy
     #   pip-tools
     #   weasyprint
+django-jsonform==2.18.0
+    # via -r requirements/base.in

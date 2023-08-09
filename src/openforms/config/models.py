@@ -15,7 +15,7 @@ from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _
 
 from colorfield.fields import ColorField
-from django_better_admin_arrayfield.models.fields import ArrayField
+from django_jsonform.models.fields import ArrayField
 from glom import glom
 from solo.models import SingletonModel
 from tinymce.models import HTMLField

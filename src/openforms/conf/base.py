@@ -161,6 +161,7 @@ INSTALLED_APPS = [
     "cookie_consent",
     "corsheaders",
     "django_better_admin_arrayfield",
+    "django_jsonform",
     "django_yubin",
     "hijack",
     "hijack.contrib.admin",
