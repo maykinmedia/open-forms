@@ -16,7 +16,7 @@ amqp==5.0.9
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   kombu
-asgiref==3.5.0
+asgiref==3.7.2
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
@@ -190,7 +190,7 @@ defusedxml==0.7.1
     #   django-camunda
     #   django-digid-eherkenning
     #   maykin-python3-saml
-django==3.2.20
+django==4.2
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt

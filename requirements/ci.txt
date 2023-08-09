@@ -13,7 +13,7 @@ amqp==5.0.9
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   kombu
-asgiref==3.5.0
+asgiref==3.7.2
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
@@ -165,7 +165,7 @@ defusedxml==0.7.1
     #   django-camunda
     #   django-digid-eherkenning
     #   maykin-python3-saml
-django==3.2.20
+django==4.2
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
